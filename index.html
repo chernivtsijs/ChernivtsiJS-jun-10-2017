@@ -6,197 +6,544 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+	<style>
+		#blia .slide {
+			padding: 50px 70px 0;
+		}
+		#blia .slide pre code {
+			tab-size: 2;
+			line-height: 1.5;
+		}
+		id {
+
+		}
+		kw {
+			color: #9c27b0;
+		}
+		op, v {
+			color: #2196f3;
+		}
+		var, cx {
+			color: #ff9800;
+		}
+		lit {
+			color: #4caf50;
+		}
+		n {
+			color: #ff5722;
+		}
+		dig {
+			color: blue;
+		}
+		prop {
+			color: #000;
+		}
+
+		val {
+			color: #ff9800;
+		}
+	</style>
 </head>
-<body class="shower list">
+<body id="blia" class="shower list">
 
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>Styles in the world of components</h1>
 	</header>
 
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
-		<style>
-			#cover h2 {
-				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
-				font-size:70px;
-				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
-				}
-				#cover p a {
-					color:#FFF;
-					}
-		</style>
+		<h2>Styles in the world of components</h2>
+		<p>Kyrylo Yakovenko(@blia)</p>
+	</section>
+
+	<section class="slide" id="contents">
+		<h2>Styles in the world of components</h2>
+		<ul>
+			<li>CSS with preprocessors</li>
+			<li>Webpack</li>
+			<li>Classnames</li>
+			<li>CSS-modules</li>
+			<li>Classnames ❤️ CSS-modules</li>
+			<li>React Native &amp; CSS in JS</li>
+			<li>Tagged template literals</li>
+			<li>Styled-components</li>
+		</ul>
 	</section>
 
 	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+		<h2>CSS with preprocessors</h2>
+		<p>Preprocessors bring a lot of cool features to CSS:</p>
+		<ul>
+			<li>nesting</li>
+			<li>vendor prefixes</li>
+			<li>mixins</li>
+			<li>transpile future CSS syntax</li>
+			<li>and more</li>
+		</ul>
+		<p class="next">It's good for HTML documents 👍, but not for small components👎.</p>
 	</section>
 
 	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
-
-	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
-
-	<section class="slide">
-		<h2>Code samples</h2>
+		<h2>Problem</h2>
 		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code>&lt;<kw>link</kw> rel=<lit>"stylesheet"</lit> href=<lit>"node_modules/comp1/style.css"</lit>&gt;</code>
+			<code>&lt;<kw>link</kw> rel=<lit>"stylesheet"</lit> href=<lit>"node_modules/comp2/style.css"</lit>&gt;</code>
+			<code>&lt;<kw>link</kw> rel=<lit>"stylesheet"</lit> href=<lit>"node_modules/comp3/style.css"</lit>&gt;</code>
+			<code>&lt;<kw>link</kw> rel=<lit>"stylesheet"</lit> href=<lit>"node_modules/comp4/style.css"</lit>&gt;</code>
+			<code>...</code>
 		</pre>
 	</section>
 
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+		<h2>Webpack</h2>
+		<p>JavaSctipt is entry point</p>
+		<pre>
+			<code class="comment">//component1/index.js</code>
+			<code><kw>import</kw> <id>styles</id> <kw>from</kw> <lit>'./styles.css'</lit>;</code>
+		</pre>
+		<pre>
+			<code class="comment">//component2/index.js</code>
+			<code><kw>import</kw> <id>styles</id> <kw>from</kw> <lit>'./styles.css'</lit>;</code>
+		</pre>
 	</section>
 
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<figure>
-			<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
-		<style>
-			#picture h2 {
-				color:#FFF;
-				}
-		</style>
+	<sectin class="slide">
+		<h2>Problem</h2>
+
+		<pre>
+			<code><kw>let</kw> <id>btnClass</id> <op>=</op> <lit>'btn'</lit>;</code>
+			<code><kw>if</kw> (<n>this</n>.<n>state</n>.<n>isPressed</n>) btnClass <op>+=</op> <lit>' btn-pressed'</lit>;</code>
+			<code><kw>else</kw> <kw>if</kw> (<n>this</n>.<n>state</n>.<n>isHovered</n>) btnClass <op>+=</op> <lit>' btn-over'</lit>;</code>
+			<code>&lt;<n>button</n> className={btnClass}&gt;;</code>
+		</pre>
+	</sectin>
+
+	<section class="slide">
+		<h2>Classnames</h2>
+		<pre>
+			<code><kw>import</kw> <id>classNames</id> <kw>from</kw> <lit>'classnames'</lit>;</code>
+			<code><kw>const</kw> btnClass <op>=</op> classNames({</code>
+			<code>	btn<op>:</op> true,</code>
+			<code>	'btn-pressed'<op>:</op> <n>this</n>.<n>state</n>.<n>isPressed</n>,</code>
+			<code>	'btn-over'<op>:</op> !<n>this</n>.<n>state</n>.<n>isPressed</n> &amp;&amp; <n>this</n>.<n>state</n>.<n>isHovered</n></code>
+			<code>});</code>
+			<code>&lt;<n>button</n> className={btnClass}&gt;;</code>
+		</pre>
+	</section>
+
+	<sectin class="slide">
+		<h2>Problem</h2>
+
+		<h2 class="lead">Global scope</h2>
+	</sectin>
+
+	<style>
+		h2.lead{
+			text-align: center;
+			margin-top: 4em;
+		}
+	</style>
+
+
+	<section class="slide">
+		<h2>CSS-modules</h2>
+
+		<img class="cssm-logo" src="./pictures/css-modules-logo.png" alt="">
+		<p>A CSS Module is a CSS file in which all class names and animation names are scoped locally by default.</p>
+	</section>
+
+	<style>
+		.cssm-logo {
+			width: 30%;
+		}
+	</style>
+
+	<section class="slide">
+		<h2>Problem</h2>
+
+		<pre>
+			<code><kw>import</kw> <id>classNames</id> <kw>from</kw> <lit>'classnames'</lit>;</code>
+			<code><kw>import</kw> <id>styles</id> <kw>from</kw> <lit>'./styles.css'</lit>;</code>
+			<code><kw>const</kw> btnClass <op>=</op> classNames({</code>
+			<code>	styles[<lit>'btn'</lit>]<op>:</op> true,</code>
+			<code>	styles[<lit>'btnPressed'</lit>]<op>:</op> <n>this</n>.<n>state</n>.<n>isPressed</n>,</code>
+			<code>	styles[<lit>'btnOver'</lit>]<op>:</op> <n>this</n>.<n>state</n>.<n>isHovered</n></code>
+			<code>});</code>
+			<code>&lt;<n>button</n> className={btnClass}&gt;;</code>
+
+		</pre>
+	</section>
+
+
+	<section class="slide">
+		<h2>Classnames ❤️ CSS-modules</h2>
+
+		<pre>
+			<code><kw>import</kw> <id>classNames</id> <kw>from</kw> <lit>'classnames/bind'</lit>;</code>
+			<code><kw>import</kw> <id>styles</id> <kw>from</kw> <lit>'./styles.css'</lit>;</code>
+			<code><kw>var</kw> cx <op>=</op> classNames.bind(styles);</code>
+			<code><kw>var</kw> btnClass <op>=</op> cx({</code>
+			<code>	btn<op>:</op> true,</code>
+			<code>	btnPressed<op>:</op> <n>this</n>.<n>state</n>.<n>isPressed</n>,</code>
+			<code>	btnOver<op>:</op> <n>this</n>.<n>state</n>.<n>isHovered</n></code>
+			<code>});</code>
+			<code>&lt;<n>button</n> className={btnClass}&gt;;</code>
+
+		</pre>
+
 	</section>
 
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
+		<h2>React Native &amp; CSS in JS</h2>
+		<pre>
+			<code><kw>const</kw> styles <op>=</op> StyleSheet.create({</code>
+			<code>	red<op>:</op> {</code>
+			<code>		color: <lit>'red'</lit>,</code>
+			<code>		fontSize: <dig>16</dig></code>
+			<code>	},</code>
+			<code>});</code>
+			<code>&lt;<n>Text</n> style={styles.red}&gt;just red&lt;/<n>Text</n>&gt;</code>
+		</pre>
 	</section>
 
 	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
+		<h2>Problem?</h2>
+
+		<p class="next">Actually, no.</p>
 	</section>
 
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
+	<section class="slide">
+		<h2>Tagged template literals</h2>
+
+		<pre>
+			<code><kw>const</kw> styles <op>=</op> StyleSheet.create({</code>
+			<code>	red<op>:</op> css<lit>`</lit></code>
+			<code>		<prop>color</prop>: <val>red</val>;</code>
+			<code>		<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code>	<lit>`</lit>,</code>
+			<code>});</code>
+			<code>&lt;<n>Text</n> style={styles.red}&gt;just red&lt;/<n>Text</n>&gt;</code>
+		</pre>
 	</section>
 
-	<section class="slide" id="see-more">
+	<section class="slide">
+		<h2>Styled-components</h2>
+
+		<pre>
+			<code><kw>import</kw> <id>styled</id> <kw>from</kw> <lit>'styled-components'</lit>;</code>
+			<code><kw>const</kw> RedText <op>=</op> styled.Text<lit>`</lit></code>
+			<code>	<prop>color</prop>: <val>red</val>;</code>
+			<code>	<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code><lit>`</lit>;</code>
+			<code>&lt;<n>RedText</n>&gt;just red&lt;/<n>RedText</n>&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Cool?</h2>
+
+		<p class="next">Yes!</p>
+
+
+	</section>
+
+	<section class="slide">
+		<h2>Styled-components</h2>
+
+		<pre>
+			<code><kw>import</kw> <id>styled</id> <kw>from</kw> <lit>'styled-components'</lit>;</code>
+			<code><kw>const</kw> RedText <op>=</op> styled.Text<lit>`</lit></code>
+			<code>	<prop>color</prop>: <val>red</val>;</code>
+			<code>	<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code><lit>`</lit>;</code>
+			<code><kw>const</kw> BlueText <op>=</op> styled.Text<lit>`</lit></code>
+			<code>	<prop>color</prop>: <val>blue</val>;</code>
+			<code>	<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code><lit>`</lit>;</code>
+			<code>&lt;<n>RedText</n>&gt;just red&lt;/<n>RedText</n>&gt;</code>
+			<code>&lt;<n>BlueText</n>&gt;just blue&lt;/<n>BlueText</n>&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Sheet mode</h2>
+
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> { RedText, BlueText } <op>=</op> css<lit>`</lit></code>
+			<code>	<n>.red-text</n> {</code>
+			<code>		<prop>color</prop>: <val>red</val>;</code>
+			<code>		<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code>	}</code>
+			<code>	<n>.blue-text</n> {</code>
+			<code>		<prop>color</prop>: <val>blue</val>;</code>
+			<code>		<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code>	}<lit>`</lit>;</code>
+			<code>&lt;<n>RedText</n>&gt;just red&lt;/<n>RedText</n>&gt;</code>
+			<code>&lt;<n>BlueText</n>&gt;just blue&lt;/<n>BlueText</n>&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>No selectors</h2>
+
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> { <mark>RedText</mark>, <mark>BlueText</mark> } <op>=</op> css<lit>`</lit></code>
+			<code>	<mark><n>.red-text</n></mark> {</code>
+			<code>		<prop>color</prop>: <val>red</val>;</code>
+			<code>		<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code>	}</code>
+			<code>	<mark><n>.blue-text</n></mark> {</code>
+			<code>		<prop>color</prop>: <val>blue</val>;</code>
+			<code>		<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code>	}<lit>`</lit>;</code>
+			<code>&lt;<n>RedText</n>&gt;just red&lt;/<n>RedText</n>&gt;</code>
+			<code>&lt;<n>BlueText</n>&gt;just blue&lt;/<n>BlueText</n>&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Specified tags</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> { RedText, BlueText } <op>=</op> css<lit>`</lit></code>
+			<code>	<mark>div</mark><n>.red-text</n> {</code>
+			<code>		<prop>color</prop>: <val>red</val>;</code>
+			<code>		<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code>	}</code>
+			<code>	<mark>p</mark><n>.blue-text</n> {</code>
+			<code>		<prop>color</prop>: <val>blue</val>;</code>
+			<code>		<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code>	}<lit>`</lit>;</code>
+			<code>&lt;<n>RedText</n>&gt;just red&lt;/<n>RedText</n>&gt;</code>
+			<code>&lt;<n>BlueText</n>&gt;just blue&lt;/<n>BlueText</n>&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Extending components</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>import</kw> <id><mark>ActionButton</mark></id> <kw>from</kw> <lit>'./action-button'</lit>;</code>
+			<code><kw>const</kw> { LoginButton } <op>=</op> css<lit>`</lit></code>
+			<code>	<mark>ActionButton</mark><n>.login-button</n> {</code>
+			<code>		<prop>background-color</prop>: <val>green</val>;</code>
+			<code>		<prop>font-size</prop>: <dig>16</dig>;</code>
+			<code>	}<lit>`</lit>;</code>
+			<code>&lt;<n>LoginButton</n>&gt;Log in&lt;/<n>LoginButton</n>&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Pseudo-classes</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> { Link } <op>=</op> css<lit>`</lit></code>
+			<code>	a<n>.link</n> {</code>
+			<code>		<prop>color</prop>: <val>blue</val>;</code>
+			<code>		<prop>text-decoration</prop>: <dig>underline</dig>;</code>
+			<code>		<n><mark>:hover</mark></n> {</code>
+			<code>			<prop>text-decoration</prop>: <dig>none</dig>;</code>
+			<code>		}</code>
+			<code>	}<lit>`</lit>;</code>
+			<code>&lt;<n>Link</n> href=<lit>"/"</lit>&gt;Home&lt;/<n>Link</n>&gt;</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>And statuses (special boolean props)</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> { Link } <op>=</op> css<lit>`</lit></code>
+			<code>	a<n>.link</n> {</code>
+			<code>		<prop>color</prop>: <val>blue</val>;</code>
+			<code>		<prop>text-decoration</prop>: <dig>underline</dig>;</code>
+			<code>		<n>:hover</n> {</code>
+			<code>			<prop>text-decoration</prop>: <dig>none</dig>;</code>
+			<code>		}</code>
+			<code>		<n><mark>:is-active</mark></n> {</code>
+			<code>			<prop>color</prop>: <dig>red</dig>;</code>
+			<code>		}</code>
+			<code>	}<lit>`</lit>;</code>
+			<code>&lt;<n>Link</n> href=<lit>"/"</lit> isActive={isHomePage}&gt;Home&lt;/<n>Link</n>&gt;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>Context (props)</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> { Link } <op>=</op> css<lit>`</lit></code>
+			<code>	a<n>.link</n> {</code>
+			<code>		<prop>color</prop>: ${props <op>=></op> props.isActive ? <lit>'red'</lit> : <lit>'blue'</lit>};</code>
+			<code>		<prop>text-decoration</prop>: <dig>underline</dig>;</code>
+			<code>		<n>:hover</n> {</code>
+			<code>			<prop>text-decoration</prop>: <dig>none</dig>;</code>
+			<code>		}</code>
+			<code>	}<lit>`</lit>;</code>
+			<code>&lt;<n>Link</n> href=<lit>"/"</lit> isActive={isHomePage}&gt;Home&lt;/<n>Link</n>&gt;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>Every declaration is a function</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> { MyButton } <op>=</op> css<lit>`</lit></code>
+			<code>	<n>.my-button</n> {</code>
+			<code>		<mark><prop>color</prop>: <val>blue</val></mark>;</code>
+			<code>		<mark><prop>display</prop>: <val>block</val></mark>;</code>
+			<code>	}<lit>`</lit>;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>Every declaration is a function</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> { MyButton } <op>=</op> css<lit>`</lit></code>
+			<code>	<n>.my-button</n> {</code>
+			<code>		<mark>css.color(<lit>'blue'</lit>)</mark>;</code>
+			<code>		<mark>css.display(<lit>'block'</lit>)</mark>;</code>
+			<code>	}<lit>`</lit>;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>Every function returns an object</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> { MyButton } <op>=</op> css<lit>`</lit></code>
+			<code>	<n>.my-button</n> {</code>
+			<code>		<mark>...{color: <lit>'blue'</lit>}</mark>;</code>
+			<code>		<mark>...{display: <lit>'block'</lit>}</mark>;</code>
+			<code>	}<lit>`</lit>;</code>
+
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>css.use</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code>css.use(<lit><mark>'box'</mark></lit>, size <op>=></op> ({width: size, height: size}));</code>
+			<code><kw>const</kw> { MyBox } <op>=</op> css<lit>`</lit></code>
+			<code>	<n>.my-box</n> {</code>
+			<code>		background-color: <val>green</val>;</code>
+			<code>		<mark>box</mark>: <dig>20</dig>px;</code>
+			<code>	}<lit>`</lit>;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>css.use</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code>css.use(<lit>'box'</lit>, size <op>=></op> ({<mark>width</mark>: size, <mark>height</mark>: size}));</code>
+			<code><kw>const</kw> { MyBox } <op>=</op> css<lit>`</lit></code>
+			<code>	<n>.my-box</n> {</code>
+			<code>		background-color: <val>green</val>;</code>
+			<code>		<mark>width</mark>: <dig>20</dig>px;</code>
+			<code>		<mark>height</mark>: <dig>20</dig>px;</code>
+			<code>	}<lit>`</lit>;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>css.use</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> box <op>=</op> size <op>=></op> ({width: size, height: size});</code>
+			<code>css.use({ <mark>box</mark> });</code>
+			<code><kw>const</kw> { MyBox } <op>=</op> css<lit>`</lit></code>
+			<code>	<n>.my-box</n> {</code>
+			<code>		background-color: <val>green</val>;</code>
+			<code>		<mark>box</mark>: <dig>20</dig>px;</code>
+			<code>	}<lit>`</lit>;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>NameSpase</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>import</kw> <id>polished</id> <kw>from</kw> <lit>'polished'</lit>;</code>
+			<code>css.use(<lit>'<mark>po</mark>'</lit>, polished);</code>
+			<code><kw>const</kw> { MyCell } <op>=</op> css<lit>`</lit></code>
+			<code>	<n>.my-cell</n> {</code>
+			<code>		display: <val>table-cell</val>;</code>
+			<code>		-<mark>po</mark>-ellipsis: <dig>250</dig>px;</code>
+			<code>	}<lit>`</lit>;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>Context (props) + css.use</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> <mark>activeColor</mark> <op>=</op></code>
+			<code>	color <op>=></op> ctx <op>=></op> ({color: ctx.isActive ? color : <lit>'blue'</lit>});</code>
+			<code>css.use({ <mark>activeColor</mark> });</code>
+			<code><kw>const</kw> { Link } <op>=</op> css<lit>`</lit></code>
+			<code>	a<n>.link</n> {</code>
+			<code>		<prop><mark>active-color</mark></prop>: <val>red</val>;</code>
+			<code>		<prop>text-decoration</prop>: <dig>underline</dig>;</code>
+			<code>	}<lit>`</lit>;</code>
+			<code>&lt;<n>Link</n> href=<lit>"/"</lit> isActive={isHomePage}&gt;Home&lt;/<n>Link</n>&gt;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>Local scope</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> activeColor <op>=</op></code>
+			<code>	color <op>=></op> ctx <op>=></op> ({color: ctx.isActive ? color : <lit>'blue'</lit>});</code>
+			<code><kw>const</kw> { Link } <op>=</op> css<lit>`</lit></code>
+			<code>	a<n>.link</n> {</code>
+			<code>		<prop><mark>-local-</mark>active-color</prop>: <val>red</val>;</code>
+			<code>		<prop>text-decoration</prop>: <dig>underline</dig>;</code>
+			<code>	}<lit>`</lit>;</code>
+			<code>&lt;<n>Link</n> href=<lit>"/"</lit> isActive={isHomePage}&gt;Home&lt;/<n>Link</n>&gt;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
+		<h2>Local scope</h2>
+		<pre>
+			<code><kw>import</kw> <id>css</id> <kw>from</kw> <lit>'my-css-lib'</lit>;</code>
+			<code><kw>const</kw> activeColor <op>=</op></code>
+			<code>	color <op>=></op> ctx <op>=></op> ({color: ctx.isActive ? color : <lit>'blue'</lit>});</code>
+			<code><kw>const</kw> { Link } <op>=</op> css<lit>`</lit></code>
+			<code>	a<n>.link</n> {</code>
+			<code>		<prop><mark>-</mark>active-color</prop>: <val>red</val>;</code>
+			<code>		<prop>text-decoration</prop>: <dig>underline</dig>;</code>
+			<code>	}<lit>`</lit>;</code>
+			<code>&lt;<n>Link</n> href=<lit>"/"</lit> isActive={isHomePage}&gt;Home&lt;/<n>Link</n>&gt;</code>
+		</pre>
+
+	</section>
+
+	<section class="slide">
 		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
+			Thanks!
 		</h2>
-		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
-		</style>
+		<a href="twitter.com/blia">twitter.com/blia</a>
+		<br>
+		<a href="github.com/blia">github.com/blia</a>
 	</section>
 
-	<footer class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</footer>
-
-	<div class="progress"></div>
+	<!-- <div class="progress"></div> -->
 
 	<script src="shower/shower.min.js"></script>
 	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
